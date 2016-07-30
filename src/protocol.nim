@@ -16,7 +16,7 @@ proc createMessage*(username, message: string): string =
   $(%{"username": %username, "message": %message}) & "\c\l"
 
 proc createMessage*(m: Message): string =
-  $(%{"username": %m.username, "message": %m.message}) & "\c\l"
+  createMessage(m.username, m.message)
 
   
 when isMainModule:
